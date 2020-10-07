@@ -1,0 +1,3 @@
+physical adress referes to the physical location in the Main memory. The user doesnot operate with it directly. 
+virtual adress is the one that a processor create by itself.It is greater or equall to the physical as its size
+consists of the main memory and swap area
