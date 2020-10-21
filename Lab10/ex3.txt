@@ -1,0 +1,13 @@
+-rw-r--r-- 1 amina amina 0 Oct 21 17:43 _ex3.txt
+-rw-r--r-- 1 amina amina 0 Oct 21 17:43 _ex3.txt
+-rwxr--rwx 1 amina amina 0 Oct 21 17:43 _ex3.txt
+
+
+i-node information has 9 bits of information
+3 bits represent permissios for 3 types: owner, group, user
+Thus :                 Owner Group User
+660 - 1 010 010 100 -   -w-  -w-   r--
+775 - 1 100 000 111 -   r--  ---   rwx
+777 - 1 100 001 001 -   r--  --x   --x
+
+

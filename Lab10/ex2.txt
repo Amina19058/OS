@@ -1,0 +1,1 @@
+/home/amina/OS/week01/file.txt

@@ -1,0 +1,36 @@
+.
+..
+file1
+file2
+link1
+int main(){
+ int res;
+ struct stat st;
+
+ struct dirent *file;
+  
+ DIR *dir;
+ const char *path;
+ 
+ path = "tmp";
+ dir = opendir(path);
+ if (dir != NULL){
+
+  		while((file = readdir(dir))){
+  			puts(file->d_name);
+  			res = stat(file->d_name, &st);
+		
+			if (st.st_nlink >= 2){
+				printf(" I-node num : %ld ", st.st_ino);
+				printf(" Hard Link : %ld ", st.st_nlink);
+
+			}
+				else
+					continue;
+
+		}
+}
+
+	return 0;
+
+}
