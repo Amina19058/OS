@@ -1,8 +1,13 @@
-.
-..
 file1
 file2
 link1
+#include <dirent.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+
 int main(){
  int res;
  struct stat st;
@@ -16,21 +21,23 @@ int main(){
  dir = opendir(path);
  if (dir != NULL){
 
-  		while((file = readdir(dir))){
-  			puts(file->d_name);
-  			res = stat(file->d_name, &st);
+    while((file = readdir(dir))){
+     if(file->d_name[0]=='.') continue;
+     char d[100000] = "tmp/";
+     puts(file->d_name);
+     res = stat(file->d_name, &st);
 		
-			if (st.st_nlink >= 2){
-				printf(" I-node num : %ld ", st.st_ino);
-				printf(" Hard Link : %ld ", st.st_nlink);
+   if (st.st_nlink >= 2){
+    printf(" I-node num : %ld ", st.st_ino);
+    printf(" Hard Link : %ld ", st.st_nlink);
 
-			}
-				else
-					continue;
+   }
+    else
+     continue;
 
-		}
+  }
 }
 
-	return 0;
+ return 0;
 
 }
