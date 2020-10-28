@@ -1,0 +1,3 @@
+Due to the line buffering of the printf, in the first case "Hello" was printed to the buffer, and and fork copied the buffer to the child process.
+In the second case as we used "\n" we get to the next string and "Hello" is was not printed to the buffer. Thus, we got"\n" twice.
+
