@@ -1,0 +1,3 @@
+In case of deadlock avoidance algorithm system needs to know in advance the maximum of resources requirements for all processes, which is often difficult to estimate. That is why, it would work only for such processes which resources are initially specified. 
+In case of deadlock prevention, most prevention algorithms have poor resource utilization, and hence result in reduced throughputs.
+Deadlock recovery is suitable only if we don't know about processes recourse demand in advance and cannot use any of the techniques mentioned above.
